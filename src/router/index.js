@@ -29,10 +29,10 @@ const routes = [
     component: () => import('../views/Categories')
   },
   {
-    path: '/detail-record',
-    name: 'Detail-record',
+    path: '/detail/:id',
+    name: 'Detail',
     meta: {layout: 'main'},
-    component: () => import('../views/DetailRecord')
+    component: () => import('../views/Detail')
   },
   {
     path: '/history',
