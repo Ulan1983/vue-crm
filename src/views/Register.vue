@@ -48,7 +48,7 @@
 
     <p class="center">
       Уже есть аккаунт?
-      <a href="/login">Войти!</a>
+      <router-link to="/login">Войти!</router-link>
     </p>
   </div>
 </form>
