@@ -40,6 +40,12 @@ const routes = [
     name: 'History',
     meta: {layout: 'main'},
     component: () => import('../views/History')
+  },
+  {
+    path: '/planning',
+    name: 'Planning',
+    meta: {layout: 'main'},
+    component: () => import('../views/Planning')
   }
 ];
 
