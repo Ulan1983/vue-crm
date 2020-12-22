@@ -33,7 +33,12 @@ const routes = [
     name: 'Detail-record',
     meta: {layout: 'main'},
     component: () => import('../views/DetailRecord')
-
+  },
+  {
+    path: '/history',
+    name: 'History',
+    meta: {layout: 'main'},
+    component: () => import('../views/History')
   }
 ];
 
