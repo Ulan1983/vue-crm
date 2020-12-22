@@ -14,7 +14,7 @@ const routes = [
     path: '/login',
     name: 'Login',
     meta: {layout: 'empty'},
-    component: () => import('../views/Login.vue')
+    component: () => import('../views/Login')
   },
   {
     path: '/register',
@@ -26,7 +26,14 @@ const routes = [
     path: '/categories',
     name: 'Categories',
     meta: {layout: 'main'},
-    component: () => import('../views/Categories.vue')
+    component: () => import('../views/Categories')
+  },
+  {
+    path: '/detail-record',
+    name: 'Detail-record',
+    meta: {layout: 'main'},
+    component: () => import('../views/DetailRecord')
+
   }
 ];
 
