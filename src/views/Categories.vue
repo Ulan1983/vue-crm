@@ -9,7 +9,9 @@
 
 				<CategoryCreate @created="addNewCategory"/>
 
-				<CategoryEdit />
+				<CategoryEdit
+						:categories="categories"
+				/>
 
 			</div>
 		</section>

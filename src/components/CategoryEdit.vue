@@ -8,7 +8,11 @@
 			<form>
 				<div class="input-field" >
 					<select ref="select">
-						<option>Category</option>
+						<option
+								v-for="c in categories"
+								:key="c.id"
+								:value="c.id"
+						>{{c.title}}</option>
 					</select>
 					<label>Выберите категорию</label>
 				</div>
@@ -39,6 +43,12 @@
 
 <script>
 	export default {
+		props: {
+			categories: {
+				type: Array,
+				required: true
+			}
+		},
 		data: () => ({
 			select: null
 		}),
