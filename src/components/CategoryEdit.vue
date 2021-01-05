@@ -7,7 +7,7 @@
 
 			<form>
 				<div class="input-field" >
-					<select>
+					<select ref="select">
 						<option>Category</option>
 					</select>
 					<label>Выберите категорию</label>
@@ -36,3 +36,19 @@
 		</div>
 	</div>
 </template>
+
+<script>
+	export default {
+		data: () => ({
+			select: null
+		}),
+		mounted() {
+			this.select = window.M.FormSelect.init(this.$refs.select);
+		},
+		destroyed() {
+			if (this.select && this.select.destroy) {
+				this.select.destroy()
+			}
+		}
+	}
+</script>
