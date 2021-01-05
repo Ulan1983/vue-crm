@@ -55,6 +55,7 @@
 
 <script>
 	import {required, minValue} from 'vuelidate/lib/validators'
+	import category from "../store/category";
 
 	export default {
 		data: () => ({
@@ -81,7 +82,8 @@
 					this.title = '';
 					this.limit = 1;
 					this.$message('Вы успешно создали категорию');
-					this.$v.reset();
+					this.$v.$reset();
+					this.$emit('created', category)
 				} catch (e) {
 					console.log(e);
 				}
