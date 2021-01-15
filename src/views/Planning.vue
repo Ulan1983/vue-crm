@@ -14,10 +14,10 @@
     <section v-else>
       <div v-for="c in categories" :key="c.id">
         <p>
-          <strong>{{c.title}}:</strong>
-          {{c.moneySpend | currency}} из {{c.limit | currency}}
+          <strong>{{ c.title }}:</strong>
+          {{ c.moneySpend | currency }} из {{ c.limit | currency }}
         </p>
-        <div class="progress" v-tooltip="'test'">
+        <div class="progress" v-tooltip="c.tooltip">
           <div
               class="determinate"
               :class="[c.progressColor]"
@@ -31,6 +31,7 @@
 
 <script>
 import {mapGetters} from 'vuex'
+import currencyFilter from "@/filters/currency.filter";
 
 export default {
   name: 'planning',
@@ -60,12 +61,15 @@ export default {
           : percent < 100
               ? 'yellow'
               : 'red'
+      const tooltipValue = c.limit - moneySpend
+      const tooltip = `${tooltipValue < 0 ? 'Превышение на' : 'Осталось'} ${currencyFilter(Math.abs(tooltipValue))}`
 
       return {
         ...c,
         progressPercent,
         progressColor,
-        moneySpend
+        moneySpend,
+        tooltip
       }
     })
 
