@@ -17,9 +17,9 @@
           <strong>{{c.title}}:</strong>
           {{c.moneySpend | currency}} из {{c.limit | currency}}
         </p>
-        <div class="progress">
+        <div class="progress" v-tooltip="'test'">
           <div
-              class="determinate green"
+              class="determinate"
               :class="[c.progressColor]"
               :style="{width: c.progressPercent + '%'}"
           ></div>
