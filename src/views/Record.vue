@@ -4,9 +4,11 @@
       <h3>Новая запись</h3>
     </div>
 
-    <Loader v-if="loading" />
+    <Loader v-if="loading"/>
 
-    <p class="center" v-else-if="!categories.length">Категорий пока нет. <router-link to="/categories">Добавить категорию</router-link></p>
+    <p class="center" v-else-if="!categories.length">Категорий пока нет.
+      <router-link to="/categories">Добавить категорию</router-link>
+    </p>
 
     <form
         class="form"
@@ -19,7 +21,7 @@
               v-for="c in categories"
               :key="c.id"
               :value="c.id"
-          >{{c.title}}
+          >{{ c.title }}
           </option>
         </select>
         <label>Выберите категорию</label>
@@ -60,16 +62,16 @@
         >
         <label for="amount">Сумма</label>
         <span
-							v-if="$v.amount.$dirty && !$v.amount.required"
-							class="helper-text invalid"
-					>
+            v-if="$v.amount.$dirty && !$v.amount.required"
+            class="helper-text invalid"
+        >
 						Введите значение
 					</span>
         <span
-							v-else-if="$v.amount.$dirty && !$v.amount.minValue"
-							class="helper-text invalid"
-					>
-						Минимальная величина должна быть {{$v.amount.$params.minValue.min}}
+            v-else-if="$v.amount.$dirty && !$v.amount.minValue"
+            class="helper-text invalid"
+        >
+						Минимальная величина должна быть {{ $v.amount.$params.minValue.min }}
 					</span>
       </div>
 
@@ -82,9 +84,9 @@
         >
         <label for="description">Описание</label>
         <span
-							v-if="$v.description.$dirty && !$v.description.required"
-							class="helper-text invalid"
-					>
+            v-if="$v.description.$dirty && !$v.description.required"
+            class="helper-text invalid"
+        >
 						Введите описание
 					</span>
       </div>
@@ -99,6 +101,7 @@
 
 <script>
 import {required, minValue} from 'vuelidate/lib/validators'
+import {mapGetters} from 'vuex'
 
 export default {
   name: 'record',
@@ -115,12 +118,48 @@ export default {
       window.M.updateTextFields()
     }, 0)
   },
+  computed: {
+    ...mapGetters(['info']),
+    canCreateRecord() {
+      if (this.type === 'income') {
+        return true
+      }
+
+      return this.info.bill >= this.amount
+    }
+  },
   methods: {
-    submitHandler() {
+    async submitHandler() {
       if (this.$v.$invalid) {
-					this.$v.$touch();
-					return
-				}
+        this.$v.$touch();
+        return
+      }
+
+      if (this.canCreateRecord) {
+        try {
+          const recordData = {
+            categoryId: this.category,
+            amount: this.amount,
+            description: this.description,
+            type: this.type,
+            date: new Date().toJSON()
+          }
+
+          await this.$store.dispatch('createRecord', recordData)
+
+          const bill = this.type === 'income' ? this.info.bill + this.amount : this.info.bill - this.amount
+
+          await this.$store.dispatch('updateInfo', {bill})
+          this.$message(`Запись успешно создана`)
+          this.$v.$reset()
+          this.amount = 1
+          this.description = ''
+              } catch (e) {
+          throw `${e}`
+        }
+      } else {
+        this.$message(`Недостаточно средств на счете. Вам не хватает ${this.amount - this.info.bill}`)
+      }
     }
   },
   data: () => ({
@@ -133,13 +172,13 @@ export default {
     description: ''
   }),
   destroyed() {
-			if (this.select && this.select.destroy) {
-				this.select.destroy()
-			}
-		},
+    if (this.select && this.select.destroy) {
+      this.select.destroy()
+    }
+  },
   validations: {
-			amount: {required, minValue: minValue(1)},
-			description: {required}
-		},
+    amount: {required, minValue: minValue(1)},
+    description: {required}
+  },
 }
 </script>
