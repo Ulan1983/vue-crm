@@ -58,7 +58,13 @@ const routes = [
     name: 'Record',
     meta: {layout: 'main', auth: true},
     component: () => import('../views/Record')
-  }
+  },
+  {
+    path: '/pageNotFound',
+    name: 'PageNotFound',
+    meta: {layout: 'empty'},
+    component: () => import('../components/PageNotFound')
+  },
 ];
 
 const router = new VueRouter({
@@ -73,6 +79,8 @@ router.beforeEach((to, from, next) => {
 
   if (requireAuth && !currentUser) {
     next('/login?message=login')
+  } else if (!to.matched.length) {
+    next('/pageNotFound');
   } else {
     next()
   }
