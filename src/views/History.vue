@@ -16,10 +16,10 @@
     </h6>
 
     <section v-else>
-      <HistoryTable :records="records"/>
+      <HistoryTable :records="items"/>
 
       <Paginate
-          :page-count="20"
+          :page-count="pageCount"
           :click-handler="pageChangeHandler"
           :prev-text="'Назад'"
           :next-text="'Вперед'"
@@ -41,27 +41,20 @@ export default {
   data: () => ({
     loading: true,
     records: [],
-    categories: []
   }),
   async mounted() {
-    // this.records = await this.$store.dispatch('fetchRecords')
-    const records = await this.$store.dispatch('fetchRecords')
-    this.categories = await this.$store.dispatch('fetchCategories')
-    this.records = records.map(record => {
+    this.records = await this.$store.dispatch('fetchRecords')
+    const categories = await this.$store.dispatch('fetchCategories')
+    this.setupPagination(this.records.map(record => {
       return {
         ...record,
-        categoryName: this.categories.find(c => c.id === record.categoryId).title,
+        categoryName: categories.find(c => c.id === record.categoryId).title,
         typeClass: record.type === 'income' ? 'green' : 'red',
         typeText: record.type === 'income' ? 'Доход' : 'Расход',
       }
-    })
+    }).reverse())
 
     this.loading = false;
-  },
-  methods: {
-    pageChangeHandler() {
-
-    }
   },
   components: {
     HistoryTable
