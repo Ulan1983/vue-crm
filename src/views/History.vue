@@ -17,15 +17,27 @@
 
     <section v-else>
       <HistoryTable :records="records"/>
+
+      <Paginate
+          :page-count="20"
+          :click-handler="pageChangeHandler"
+          :prev-text="'Назад'"
+          :next-text="'Вперед'"
+          :container-class="'pagination'"
+          :page-class="'waves-effect'"
+          :margin-pages="3"
+        />
     </section>
   </div>
 </template>
 
 <script>
 import HistoryTable from "@/components/HistoryTable";
+import paginationMixin from "@/mixins/pagination.mixin";
 
 export default {
   name: 'history',
+  mixins: [paginationMixin],
   data: () => ({
     loading: true,
     records: [],
@@ -45,6 +57,11 @@ export default {
     })
 
     this.loading = false;
+  },
+  methods: {
+    pageChangeHandler() {
+
+    }
   },
   components: {
     HistoryTable
