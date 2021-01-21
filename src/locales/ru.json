@@ -1,0 +1,19 @@
+{
+  "ProfileTitle": "Профиль",
+  "Menu_Bill": "Счет",
+  "Menu_History": "История",
+  "Menu_Planning": "Планирование",
+  "Menu_NewRecord": "Новая запись",
+  "Menu_Categories": "Категории",
+  "LogoutBtn": "Выйти",
+  "Greeting": "Привет, ",
+  "CategoryCreateTitle": "Создать",
+  "CategoryCreateNameLabel": "Название",
+  "ValidMsgTitle": "Введите название категории",
+  "CategoryCreateLimitLabel": "Лимит",
+  "ValidMsgLimit": "Введите значение",
+  "ValidMsgLimitMinVal": "Минимальная величина должна быть ",
+  "CategoryEditTitle": "Редактировать",
+  "LabelChooseCategory": "Выберите категорию",
+  "EditCategoryBtn": "Обновить"
+}

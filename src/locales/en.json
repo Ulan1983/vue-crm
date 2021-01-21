@@ -1,0 +1,19 @@
+{
+  "ProfileTitle": "Profile",
+  "Menu_Bill": "Bill",
+  "Menu_History": "History",
+  "Menu_Planning": "Planning",
+  "Menu_NewRecord": "New record",
+  "Menu_Categories": "Categories",
+  "LogoutBtn": "Sign Out",
+  "Greeting": "Hello, ",
+  "CategoryCreateTitle": "Create",
+  "CategoryCreateNameLabel": "Title",
+  "ValidMsgTitle": "Enter category title",
+  "CategoryCreateLimitLabel": "Limit",
+  "ValidMsgLimit": "Enter value",
+  "ValidMsgLimitMinVal": "Minimal value should be ",
+  "CategoryEditTitle": "Edit",
+  "LabelChooseCategory": "Choose a category",
+  "EditCategoryBtn": "Edit"
+}
