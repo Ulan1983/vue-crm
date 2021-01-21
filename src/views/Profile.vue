@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="page-title">
-      <h3>Профиль</h3>
+      <h3>{{ 'ProfileTitle' | localize }}</h3>
     </div>
 
     <form class="form" @submit.prevent="submitHandler">
@@ -24,7 +24,7 @@
       <div class="switch">
         <label>
           English
-          <input type="checkbox">
+          <input type="checkbox" v-model="isRuLocale">
           <span class="lever"></span>
           Русский
         </label>
@@ -45,10 +45,12 @@ import {required} from 'vuelidate/lib/validators'
 export default {
   name: 'profile',
   data: () => ({
-    name: ''
+    name: '',
+    isRuLocale: true
   }),
   mounted() {
     this.name = this.info.name
+    this.isRuLocale = this.info.locale === 'ru-RU'
     setTimeout(() => {
       window.M.updateTextFields()
     }, 0)
@@ -65,6 +67,7 @@ export default {
       }
       const formData = {
         name: this.name,
+        locale: this.isRuLocale ? 'ru-RU' : 'en-US'
       }
 
       try {

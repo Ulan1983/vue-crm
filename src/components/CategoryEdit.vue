@@ -2,7 +2,7 @@
 	<div class="col s12 m6">
 		<div>
 			<div class="page-subtitle">
-				<h4>Редактировать</h4>
+				<h4>{{ 'CategoryEditTitle' | localize }}</h4>
 			</div>
 
 			<form @submit.prevent="submitHandler">
@@ -14,7 +14,7 @@
 								:value="c.id"
 						>{{c.title}}</option>
 					</select>
-					<label>Выберите категорию</label>
+					<label>{{'LabelChooseCategory' | localize}}</label>
 				</div>
 
 				<div class="input-field">
@@ -24,12 +24,12 @@
 							v-model="title"
 							:class="{invalid: $v.title.$dirty && !$v.title.required}"
 					>
-					<label for="name">Название</label>
+					<label for="name">{{'CategoryCreateNameLabel' | localize}}</label>
 					<span
 							v-if="$v.title.$error"
 							class="helper-text invalid"
 					>
-						Введите название категории
+						{{'ValidMsgTitle' | localize}}
 					</span>
 				</div>
 
@@ -40,23 +40,23 @@
 							v-model.number="limit"
 							:class="{invalid: ($v.limit.$dirty && !$v.limit.required || $v.limit.$dirty && !$v.limit.minValue)}"
 					>
-					<label for="limit">Лимит</label>
+					<label for="limit">{{'CategoryCreateLimitLabel' | localize}}</label>
 					<span
 							v-if="$v.limit.$dirty && !$v.limit.required"
 							class="helper-text invalid"
 					>
-						Введите значение
+						{{'ValidMsgLimit' | localize}}
 					</span>
 					<span
 							v-else-if="$v.limit.$dirty && !$v.limit.minValue"
 							class="helper-text invalid"
 					>
-						Минимальная величина должна быть {{$v.limit.$params.minValue.min}}
+						{{'ValidMsgLimitMinVal' | localize}}{{$v.limit.$params.minValue.min}}
 					</span>
 				</div>
 
 				<button class="btn waves-effect waves-light" type="submit">
-					Обновить
+          {{ 'EditCategoryBtn' | localize }}
 					<i class="material-icons right">send</i>
 				</button>
 			</form>
