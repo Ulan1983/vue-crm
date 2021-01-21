@@ -100,7 +100,7 @@ export default {
 
         await this.$router.push('/')
       } catch (e) {
-        console.log(e);
+        throw `${e}`;
       }
     }
   }
