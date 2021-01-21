@@ -1,10 +1,10 @@
 {
   "ProfileTitle": "Профиль",
-  "Menu_Bill": "Счет",
-  "Menu_History": "История",
-  "Menu_Planning": "Планирование",
-  "Menu_NewRecord": "Новая запись",
-  "Menu_Categories": "Категории",
+  "MenuBill": "Счет",
+  "MenuHistory": "История",
+  "MenuPlanning": "Планирование",
+  "MenuNewRecord": "Новая запись",
+  "MenuCategories": "Категории",
   "LogoutBtn": "Выйти",
   "Greeting": "Привет, ",
   "CategoryCreateTitle": "Создать",
@@ -15,5 +15,15 @@
   "ValidMsgLimitMinVal": "Минимальная величина должна быть ",
   "CategoryEditTitle": "Редактировать",
   "LabelChooseCategory": "Выберите категорию",
-  "EditCategoryBtn": "Обновить"
+  "EditCategoryBtn": "Обновить",
+  "CreateCategoryMsg": "Категория успешно создана",
+  "EditCategoryMsg": "Категория успешно обновлена",
+  "TableAmount": "Сумма",
+  "TableDate": "Дата",
+  "TableCategory": "Категория",
+  "TableType": "Тип",
+  "TableOpen": "Открыть",
+  "IncomeType": "Доход",
+  "OutcomeType": "Расход",
+  "ShowRecordTooltipVal": "Посмотреть запись"
 }

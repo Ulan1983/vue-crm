@@ -55,6 +55,7 @@
 
 <script>
 	import {required, minValue} from 'vuelidate/lib/validators'
+  import localizeFilter from "@/filters/localize.filter";
 
 	export default {
 		data: () => ({
@@ -80,7 +81,7 @@
 					await this.$store.dispatch('createCategory', formData);
 					this.title = '';
 					this.limit = 1;
-					this.$message('Вы успешно создали категорию');
+					this.$message(localizeFilter('CreateCategoryMsg'));
 					this.$v.$reset();
 					this.$emit('created', formData)
 				} catch (e) {

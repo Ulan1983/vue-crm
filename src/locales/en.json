@@ -1,10 +1,10 @@
 {
   "ProfileTitle": "Profile",
-  "Menu_Bill": "Bill",
-  "Menu_History": "History",
-  "Menu_Planning": "Planning",
-  "Menu_NewRecord": "New record",
-  "Menu_Categories": "Categories",
+  "MenuBill": "Bill",
+  "MenuHistory": "History",
+  "MenuPlanning": "Planning",
+  "MenuNewRecord": "New record",
+  "MenuCategories": "Categories",
   "LogoutBtn": "Sign Out",
   "Greeting": "Hello, ",
   "CategoryCreateTitle": "Create",
@@ -15,5 +15,15 @@
   "ValidMsgLimitMinVal": "Minimal value should be ",
   "CategoryEditTitle": "Edit",
   "LabelChooseCategory": "Choose a category",
-  "EditCategoryBtn": "Edit"
+  "EditCategoryBtn": "Edit",
+  "CreateCategoryMsg": "A category was successfully created",
+  "EditCategoryMsg": "A category was successfully edited",
+  "TableAmount": "Amount",
+  "TableDate": "Date",
+  "TableCategory": "Category",
+  "TableType": "Type",
+  "TableOpen": "Open",
+  "IncomeType": "Income",
+  "OutcomeType": "Outcome",
+  "ShowRecordTooltipVal": "See record"
 }
