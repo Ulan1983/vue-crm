@@ -15,7 +15,7 @@
 		</main>
 
 		<div class="fixed-action-btn">
-			<router-link class="btn-floating btn-large blue" to="/record" v-tooltip="'Создать новую запись'">
+			<router-link class="btn-floating btn-large blue" to="/record" v-tooltip="NewRecordTooltip('NewRecordTooltip')">
 				<i class="large material-icons">add</i>
 			</router-link>
 		</div>
@@ -29,6 +29,7 @@ import Navbar from '../components/app/Navbar'
 import Sidebar from '../components/app/Sidebar'
 import Loader from '../components/app/Loader'
 import messages from "@/utils/messages";
+import localizeFilter from "@/filters/localize.filter";
 
 export default {
   name: 'main-layout',
@@ -56,8 +57,13 @@ export default {
   },
   watch: {
     error(fbError) {
-      this.$error(messages[fbError.code] || 'Что-то пошло не так')
-    },
+      this.$error(messages[fbError.code] || localizeFilter('ErrorMsg'))
+    }
+  },
+  methods: {
+    NewRecordTooltip(val) {
+      return localizeFilter(val)
+    }
   }
 }
 </script>

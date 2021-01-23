@@ -30,5 +30,7 @@
   "BillCurTitle": "Bill in currencies",
   "CurrencyRates": "Currencies rates",
   "CurTitle": "Currency",
-  "RateTitle": "Rate"
+  "RateTitle": "Rate",
+  "ErrorMsg": "Something error",
+  "NewRecordTooltip": "Create a new record"
 }

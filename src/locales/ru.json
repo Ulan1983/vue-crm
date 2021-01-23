@@ -30,5 +30,7 @@
   "BillCurTitle": "Счет в валюте",
   "CurrencyRates": "Курс валют",
   "CurTitle": "Валюта",
-  "RateTitle": "Курс"
+  "RateTitle": "Курс",
+  "ErrorMsg": "Что-то пошло не так",
+  "NewRecordTooltip": "Создать новую запись"
 }
