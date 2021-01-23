@@ -25,5 +25,6 @@
   "TableOpen": "Открыть",
   "IncomeType": "Доход",
   "OutcomeType": "Расход",
-  "ShowRecordTooltipVal": "Посмотреть запись"
+  "ShowRecordTooltipVal": "Посмотреть запись",
+  "LangBtn": "Выбрать язык"
 }

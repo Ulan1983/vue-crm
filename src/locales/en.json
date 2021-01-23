@@ -25,5 +25,6 @@
   "TableOpen": "Open",
   "IncomeType": "Income",
   "OutcomeType": "Outcome",
-  "ShowRecordTooltipVal": "See record"
+  "ShowRecordTooltipVal": "See record",
+  "LangBtn": "Choose language"
 }
