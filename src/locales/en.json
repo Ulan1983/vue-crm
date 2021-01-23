@@ -26,5 +26,9 @@
   "IncomeType": "Income",
   "OutcomeType": "Outcome",
   "ShowRecordTooltipVal": "See record",
-  "LangBtn": "Choose language"
+  "LangBtn": "Choose language",
+  "BillCurTitle": "Bill in currencies",
+  "CurrencyRates": "Currencies rates",
+  "CurTitle": "Currency",
+  "RateTitle": "Rate"
 }

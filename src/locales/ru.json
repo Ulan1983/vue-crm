@@ -26,5 +26,9 @@
   "IncomeType": "Доход",
   "OutcomeType": "Расход",
   "ShowRecordTooltipVal": "Посмотреть запись",
-  "LangBtn": "Выбрать язык"
+  "LangBtn": "Выбрать язык",
+  "BillCurTitle": "Счет в валюте",
+  "CurrencyRates": "Курс валют",
+  "CurTitle": "Валюта",
+  "RateTitle": "Курс"
 }
