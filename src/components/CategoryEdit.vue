@@ -19,12 +19,12 @@
 
 				<div class="input-field">
 					<input
-							id="name"
+							id="edit_name"
 							type="text"
 							v-model="title"
 							:class="{invalid: $v.title.$dirty && !$v.title.required}"
 					>
-					<label for="name">{{'CategoryCreateNameLabel' | localize}}</label>
+					<label for="edit_name">{{'CategoryCreateNameLabel' | localize}}</label>
 					<span
 							v-if="$v.title.$error"
 							class="helper-text invalid"
@@ -35,12 +35,12 @@
 
 				<div class="input-field">
 					<input
-							id="limit"
+							id="edit_limit"
 							type="number"
 							v-model.number="limit"
 							:class="{invalid: ($v.limit.$dirty && !$v.limit.required || $v.limit.$dirty && !$v.limit.minValue)}"
 					>
-					<label for="limit">{{'CategoryCreateLimitLabel' | localize}}</label>
+					<label for="edit_limit">{{'CategoryCreateLimitLabel' | localize}}</label>
 					<span
 							v-if="$v.limit.$dirty && !$v.limit.required"
 							class="helper-text invalid"
