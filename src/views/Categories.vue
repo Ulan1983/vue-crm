@@ -1,7 +1,7 @@
 <template>
 	<div>
 		<div class="page-title">
-			<h3>Категории</h3>
+			<h3>{{'MenuCategories' | localize}}</h3>
 		</div>
 		<section>
 			<Loader v-if="loading" />
@@ -19,7 +19,7 @@
 				/>
 
 				<p v-else class="center">
-					Категорий пока нет
+					{{'NoCategoriesTitle' | localize}}
 				</p>
 
 			</div>

@@ -32,5 +32,11 @@
   "CurTitle": "Валюта",
   "RateTitle": "Курс",
   "ErrorMsg": "Что-то пошло не так",
-  "NewRecordTooltip": "Создать новую запись"
+  "NewRecordTooltip": "Создать новую запись",
+  "NoCategoriesTitle": "Категорий пока нет",
+  "RecordDescription": "Описание",
+  "RecordNotFound": "Запись с таким id не найдена.",
+  "RecordHistoryTitle": "История записей",
+  "NoRecordsTitle": "Записей пока нет.",
+  "AddNewRecord": "Добавьте запись"
 }

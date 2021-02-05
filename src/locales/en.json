@@ -32,5 +32,11 @@
   "CurTitle": "Currency",
   "RateTitle": "Rate",
   "ErrorMsg": "Something error",
-  "NewRecordTooltip": "Create a new record"
+  "NewRecordTooltip": "Create a new record",
+  "NoCategoriesTitle": "No categories yet",
+  "RecordDescription": "Description",
+  "RecordNotFound": "Record with this id is not found.",
+  "RecordHistoryTitle": "Record history",
+  "NoRecordsTitle": "No records yet.",
+  "AddNewRecord": "Add record"
 }
