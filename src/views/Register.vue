@@ -1,7 +1,7 @@
 <template>
   <form class="card auth-card" @submit.prevent="submitHandler">
     <div class="card-content">
-      <span class="card-title">Домашняя бухгалтерия</span>
+      <span class="card-title">Home bookkeeping</span>
       <div class="input-field">
         <input
             id="email"
@@ -14,13 +14,13 @@
             class="helper-text invalid"
             v-if="$v.email.$dirty && !$v.email.required"
         >
-          Введите email
+          Enter email
         </small>
         <small
             class="helper-text invalid"
             v-else-if="$v.email.$dirty && !$v.email.email"
         >
-          Введите корректный email
+          Enter correct email
         </small>
       </div>
       <div class="input-field">
@@ -30,18 +30,18 @@
             v-model.trim="password"
             :class="{invalid: ($v.password.$dirty && !$v.password.required) || ($v.password.$dirty && !$v.password.minLength)}"
         >
-        <label for="password">Пароль</label>
+        <label for="password">Password</label>
         <small
             class="helper-text invalid"
             v-if="$v.password.$dirty && !$v.password.required"
         >
-          Введите пароль
+          Enter password
         </small>
         <small
             class="helper-text invalid"
             v-else-if="$v.password.$dirty && !$v.password.minLength"
         >
-          Пароль должен содержать не менее {{ $v.password.$params.minLength.min }} символов. Сейчас он состоит из
+          Password should be at least {{ $v.password.$params.minLength.min }} symbols. Now symbols
           {{ password.length }}.
         </small>
       </div>
@@ -52,25 +52,25 @@
             v-model.trim="name"
             :class="{invalid: ($v.name.$dirty && !$v.name.required) || ($v.name.$dirty && !$v.name.minLength)}"
         >
-        <label for="name">Имя</label>
+        <label for="name">Name</label>
         <small
             class="helper-text invalid"
             v-if="$v.name.$dirty && !$v.name.required"
         >
-          Введите имя
+          Enter name
         </small>
         <small
             class="helper-text invalid"
             v-else-if="$v.name.$dirty && !$v.name.minLength"
         >
-          Имя должно содержать не менее {{ $v.name.$params.minLength.min }} символов. Сейчас оно состоит из
+          Name should be at least {{ $v.name.$params.minLength.min }} symbols. Now symbols
           {{ name.length }}.
         </small>
       </div>
       <p>
         <label>
           <input type="checkbox" v-model="agree"/>
-          <span>С правилами согласен</span>
+          <span>Agree with rules</span>
         </label>
       </p>
     </div>
@@ -80,14 +80,14 @@
             class="btn waves-effect waves-light auth-submit"
             type="submit"
         >
-          Зарегистрироваться
+          Register
           <i class="material-icons right">send</i>
         </button>
       </div>
 
       <p class="center">
-        Уже есть аккаунт?
-        <router-link to="/login">Войти</router-link>
+        Already have an account?
+        <router-link to="/login">Log in</router-link>
       </p>
     </div>
   </form>
@@ -113,17 +113,17 @@ export default {
   methods: {
     async submitHandler() {
       if (this.$v.$invalid) {
-        this.$v.$touch()
+        this.$v.$touch();
         return
       }
       const formData = {
         email: this.email,
         password: this.password,
         name: this.name,
-      }
+      };
 
       try {
-        await this.$store.dispatch('register', formData)
+        await this.$store.dispatch('register', formData);
         await this.$router.push('/')
       } catch (e) {
         throw `${e}`

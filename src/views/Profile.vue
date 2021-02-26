@@ -12,17 +12,17 @@
             v-model="name"
             :class="{invalid: $v.name.$dirty && !$v.name.required}"
         >
-        <label for="description">Имя</label>
+        <label for="description">{{'Name' | localize}}</label>
         <small
             class="helper-text invalid"
             v-if="$v.name.$dirty && !$v.name.required"
         >
-          Введите имя
+          {{'EnterName' | localize}}
         </small>
       </div>
 
       <button class="btn waves-effect waves-light" type="submit">
-        Обновить
+        {{'EditProfileBtn'| localize}}
         <i class="material-icons right">send</i>
       </button>
     </form>
@@ -39,7 +39,7 @@ export default {
     name: ''
   }),
   mounted() {
-    this.name = this.info.name
+    this.name = this.info.name;
     setTimeout(() => {
       window.M.updateTextFields()
     }, 0)
@@ -51,12 +51,12 @@ export default {
     ...mapActions(['updateInfo']),
     async submitHandler() {
       if (this.$v.$invalid) {
-        this.$v.$touch()
+        this.$v.$touch();
         return
       }
       const formData = {
         name: this.name
-      }
+      };
 
       try {
         await this.updateInfo(formData)

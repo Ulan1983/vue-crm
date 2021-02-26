@@ -47,10 +47,10 @@ export default {
     records: [],
   }),
   async mounted() {
-    this.records = await this.$store.dispatch('fetchRecords')
-    const categories = await this.$store.dispatch('fetchCategories')
+    this.records = await this.$store.dispatch('fetchRecords');
+    const categories = await this.$store.dispatch('fetchCategories');
 
-    this.setup(categories)
+    this.setup(categories);
 
     this.renderChart({
           labels: categories.map(c => c.title),
@@ -83,7 +83,7 @@ export default {
             borderWidth: 1
           }]
         },
-    )
+    );
 
     this.loading = false;
   },

@@ -38,5 +38,11 @@
   "RecordNotFound": "Запись с таким id не найдена.",
   "RecordHistoryTitle": "История записей",
   "NoRecordsTitle": "Записей пока нет.",
-  "AddNewRecord": "Добавьте запись"
+  "AddNewRecord": "Добавьте запись",
+  "AddCategoryTitle": "Добавить категорию",
+  "From": "из",
+  "Name": "Имя",
+  "EnterName": "Введите имя",
+  "EditProfileBtn": "Обновить",
+  "EnterDescription": "Введите описание"
 }

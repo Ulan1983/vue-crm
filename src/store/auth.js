@@ -4,32 +4,32 @@ export default {
   actions: {
     async login({dispatch, commit}, {email, password}) {
       try {
-        console.log(dispatch, commit)
+        console.log(dispatch, commit);
         await firebase.auth().signInWithEmailAndPassword(email, password)
       } catch (e) {
-        commit('setError', e)
+        commit('setError', e);
         throw `${e}`;
       }
     },
     async register({dispatch, commit}, {email, password, name}) {
       try {
-        await firebase.auth().createUserWithEmailAndPassword(email, password)
-        const uid = await dispatch('getUid')
+        await firebase.auth().createUserWithEmailAndPassword(email, password);
+        const uid = await dispatch('getUid');
         await firebase.database().ref(`/users/${uid}/info`).set({
           bill: 10000,
           name
         })
       } catch (e) {
-        commit('setError', e)
+        commit('setError', e);
         throw `${e}`;
       }
     },
     getUid() {
-      const user = firebase.auth().currentUser
+      const user = firebase.auth().currentUser;
       return user ? user.uid : null
     },
     async logout({commit}) {
-      await firebase.auth().signOut()
+      await firebase.auth().signOut();
       commit('clearInfo')
     },
   }

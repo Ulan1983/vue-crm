@@ -66,7 +66,7 @@ export default {
   }),
   methods: {
     async logout() {
-      await this.$store.dispatch('logout')
+      await this.$store.dispatch('logout');
       await this.$router.push('/login?message=logout')
     },
     ...mapActions(['updateInfo']),
@@ -87,14 +87,14 @@ export default {
   mounted() {
     this.interval = setInterval(() => {
       this.date = new Date()
-    }, 1000)
+    }, 1000);
     this.dropdown = window.M.Dropdown.init(this.$refs.dropdown, {
       constrainWidth: false
-    })
+    });
     this.isRuLocale = this.info.locale === 'ru-RU'
   },
   beforeDestroy() {
-    clearInterval(this.interval)
+    clearInterval(this.interval);
     if (this.dropdown && this.dropdown.destroy) {
       this.dropdown.destroy()
     }

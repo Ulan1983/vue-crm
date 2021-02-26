@@ -49,7 +49,7 @@ export default {
       ...record,
       categoryName: category.title,
 
-    }
+    };
 
     this.loading = false;
   }

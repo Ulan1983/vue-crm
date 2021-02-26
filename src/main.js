@@ -19,14 +19,14 @@ import 'firebase/database'
 
 Vue.config.productionTip = false;
 
-Vue.use(Vuelidate)
-Vue.use(messagePlugin)
-Vue.filter('date', dateFilter)
-Vue.filter('currency', currencyFilter)
-Vue.filter('localize', localizeFilter)
-Vue.directive('tooltip', tooltipDirective)
-Vue.component('Loader', Loader)
-Vue.component('Paginate', Paginate)
+Vue.use(Vuelidate);
+Vue.use(messagePlugin);
+Vue.filter('date', dateFilter);
+Vue.filter('currency', currencyFilter);
+Vue.filter('localize', localizeFilter);
+Vue.directive('tooltip', tooltipDirective);
+Vue.component('Loader', Loader);
+Vue.component('Paginate', Paginate);
 
 const firebaseConfig = {
     apiKey: "AIzaSyAVu6MKyoVr14s3aWEiQhPF8AhaWLr2WbU",
@@ -38,9 +38,9 @@ const firebaseConfig = {
     measurementId: "G-TN5W5SJ32G"
 };
 
-firebase.initializeApp(firebaseConfig)
+firebase.initializeApp(firebaseConfig);
 
-let app
+let app;
 
 firebase.auth().onAuthStateChanged(() => {
     if (!app) {
@@ -50,6 +50,6 @@ firebase.auth().onAuthStateChanged(() => {
             render: h => h(App)
         }).$mount('#app');
     }
-})
+});
 
 
