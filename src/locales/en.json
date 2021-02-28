@@ -47,5 +47,8 @@
   "EnterDescription": "Enter description",
   "MoreThan": "Excess on",
   "Stayed": "Left",
-  "Error": "Error"
+  "DetailTitle": "Record",
+  "HomePageTitle": "Home",
+  "LoginPageTitle": "Login",
+  "RegisterPageTitle": "Register"
 }

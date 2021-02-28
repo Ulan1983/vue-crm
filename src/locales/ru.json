@@ -47,5 +47,8 @@
   "EnterDescription": "Введите описание",
   "MoreThan": "Превышение на",
   "Stayed": "Осталось",
-  "Error": "Ошибка"
+  "DetailTitle": "Запись",
+  "HomePageTitle": "Главная",
+  "LoginPageTitle": "Вход",
+  "RegisterPageTitle": "Регистрация"
 }

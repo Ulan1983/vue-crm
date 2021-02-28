@@ -32,6 +32,11 @@
 	import CategoryEdit from '../components/CategoryEdit'
 
 	export default {
+		metaInfo() {
+			return {
+				title: this.$title('MenuCategories')
+			}
+		},
 		name: 'categories',
 		data: () => ({
 			categories: [],
