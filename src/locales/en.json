@@ -44,5 +44,8 @@
   "Name": "Name",
   "EnterName": "Enter name",
   "EditProfileBtn": "Edit",
-  "EnterDescription": "Enter description"
+  "EnterDescription": "Enter description",
+  "MoreThan": "Excess on",
+  "Stayed": "Left",
+  "Error": "Error"
 }

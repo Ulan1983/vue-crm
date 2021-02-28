@@ -44,5 +44,8 @@
   "Name": "Имя",
   "EnterName": "Введите имя",
   "EditProfileBtn": "Обновить",
-  "EnterDescription": "Введите описание"
+  "EnterDescription": "Введите описание",
+  "MoreThan": "Превышение на",
+  "Stayed": "Осталось",
+  "Error": "Ошибка"
 }

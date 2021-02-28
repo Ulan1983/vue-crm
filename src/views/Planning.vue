@@ -32,6 +32,7 @@
 <script>
 import {mapGetters} from 'vuex'
 import currencyFilter from "@/filters/currency.filter";
+import localizeFilter from "../filters/localize.filter";
 
 export default {
   name: 'planning',
@@ -62,7 +63,7 @@ export default {
               ? 'yellow'
               : 'red';
       const tooltipValue = c.limit - moneySpend;
-      const tooltip = `${tooltipValue < 0 ? 'Превышение на' : 'Осталось'} ${currencyFilter(Math.abs(tooltipValue))}`;
+      const tooltip = `${tooltipValue < 0 ? localizeFilter('MoreThan') : localizeFilter('Stayed')} ${currencyFilter(Math.abs(tooltipValue))}`;
 
       return {
         ...c,
